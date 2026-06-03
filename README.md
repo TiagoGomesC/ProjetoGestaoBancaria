@@ -1,7 +1,7 @@
-#ProjetoGestaoBancaria
-
-Projeto final de levantamento de requisitos (LER) 
-# bankPython# Sistema de Banco Digital (CLI) - Especificação de Requisitos
+# ProjetoGestaoBancaria
+### Projeto final de levantamento de requisitos (LER) 
+# BankPython
+# Sistema de Banco Digital (CLI) - Especificação de Requisitos
 
 ## 1. Introdução
 
