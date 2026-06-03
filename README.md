@@ -195,7 +195,7 @@ O sistema operará de forma autônoma via terminal de comando de texto, sendo ex
 
 | Versão | Data       | Autor            | Modificações                                      |
 |--------|------------|------------------|---------------------------------------------------|
-| 1.0    | 2026-05-27 | Analista de Req. | Criação da especificação sob a ISO 29148.         |
+| 1.0    | 2026-05-27 | Maria Eduarda e Tiago | Criação da especificação sob a ISO 29148.         |
 
 ### Matriz de Rastreabilidade Simplificada
 
