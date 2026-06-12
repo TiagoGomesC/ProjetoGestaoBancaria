@@ -1,206 +1,48 @@
-# ProjetoGestaoBancaria
-### Projeto final de levantamento de requisitos (LER) 
-# BankPython
-# Sistema de Banco Digital (CLI) - Especificação de Requisitos
+# BankPython 🐍 - Sistema de Banco Digital (CLI)
 
-## 1. Introdução
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3">
+  <img src="https://img.shields.io/badge/ISO%2029148-Requisitos-green?style=for-the-badge" alt="ISO 29148">
+  <img src="https://img.shields.io/badge/Ambiente-CLI-orange?style=for-the-badge" alt="Ambiente CLI">
+</p>
 
-### 1.1 Propósito
-Este documento especifica os requisitos funcionais, não-funcionais e regras de negócio para o Sistema de Banco Digital CLI, seguindo as diretrizes de especificação do padrão ISO/IEC/IEEE 29148:2018.
-
-### 1.2 Escopo
-O sistema consistirá em uma aplicação de Linha de Comando (CLI) escrita em Python para gerenciar de forma volátil operações bancárias básicas de um cliente, incluindo abertura de conta, depósitos, saques com tarifas automáticas e controle de saldo integrado ao cheque especial, além da visualização de um extrato limitado.
-
-### 1.3 Definições e Acrônimos
-- **CLI**: *Command Line Interface* (Interface de Linha de Comando).
-- **RF**: Requisito Funcional (O que o sistema faz).
-- **RNF**: Requisito Não-Funcional (Características de qualidade/técnicas).
-- **RN**: Regra de Negócio (Diretrizes financeiras e restrições operacionais do banco).
-- **NS**: Necessidade do Stakeholder.
-
-### 1.4 Referências
-- ISO/IEC/IEEE 29148:2018 - *Systems and software engineering — Life cycle processes — Requirements engineering*.
+O **BankPython** é uma aplicação de Linha de Comando (CLI) que simula um sistema de banco digital moderno, dinâmico e seguro. O projeto foi desenvolvido como o entregável final da disciplina de **Levantamento de Requisitos (LER)**, unindo uma especificação de software rigorosa com uma implementação limpa e robusta em Python.
 
 ---
 
-## 2. Descrição Geral
+## 📌 Sobre o Projeto
 
-### 2.1 Perspectiva do Produto
-O sistema operará de forma autônoma via terminal de comando de texto, sendo executado localmente em ambiente Python 3. Os dados persistirão apenas durante a sessão ativa da aplicação.
+O objetivo principal deste projeto foi aplicar as diretrizes de engenharia de requisitos da norma **ISO/IEC/IEEE 29148:2018** em um cenário prático. O software gerencia de forma volátil as operações bancárias essenciais de um cliente único, integrando taxas automatizadas, controle inteligente de limite de cheque especial e gerenciamento otimizado de histórico em memória RAM.
 
-### 2.2 Funções Principais
-- Abertura de conta com identificação de titular e aporte inicial.
-- Movimentações de crédito (Depósito) e débito (Saque).
-- Monitoramento de limite emergencial (Cheque Especial).
-- Emissão de extrato histórico resumido de transações.
-
----
-
-## 3. Requisitos Específicos
-
-### 3.1 Requisitos Funcionais (RF)
-
-#### RF-001: Abertura de Conta
-**Descrição**: O sistema deve permitir a abertura de uma conta solicitando obrigatoriamente o nome completo do titular e um valor de depósito/saldo inicial.
-
-**Prioridade**: Alta  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-**Rastreabilidade**: Derivado de NS-001
-
-**Critérios de Aceitação**:
-- [ ] O sistema não deve aceitar nomes de titulares vazios.
-- [ ] O depósito de abertura deve aceitar apenas valores numéricos positivos ou zero.
-- [ ] Após o cadastro bem-sucedido, os dados devem ser salvos em memória e o menu principal deve ser liberado.
+### 🚀 Funcionalidades Principais
+* **Abertura de Conta Prática (RF-001):** Cadastro rápido do titular com validação de aporte inicial e ativação opcional de limite emergencial.
+* **Depósitos Instantâneos (RF-002):** Incremento de saldo em tempo real com validações de segurança para valores numéricos positivos.
+* **Saque Inteligente (RF-003):** Processamento automatizado de saques calculando o custo da transação somado à **taxa fixa de R$ 2,50 (RN-002)**.
+* **Integração com Cheque Especial (RN-001):** Permite a continuidade das operações de débito mesmo se o saldo real zerar, utilizando o limite de crédito aprovado.
+* **Extrato Dinâmico Otimizado (RF-004 / RN-003):** Apresentação das **3 últimas movimentações** cronológicas, utilizando descarte em fila para otimização de memória.
+* **Interface Fluida (RF-005 / RNF-004):** Terminal limpo automaticamente a cada operação, garantindo usabilidade e foco visual.
 
 ---
 
-#### RF-002: Realização de Depósitos
-**Descrição**: O sistema deve permitir que o usuário adicione fundos à sua conta informando um valor monetário.
+## 📐 Engenharia de Requisitos (Padrão ISO 29148)
 
-**Prioridade**: Alta  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-**Rastreabilidade**: Derivado de NS-002
+A arquitetura do software foi totalmente guia pela documentação de requisitos. Abaixo estão destacados os pilares regulatórios do sistema:
 
-**Critérios de Aceitação**:
-- [ ] O valor inserido deve ser estritamente maior que zero ($> 0$).
-- [ ] O sistema deve recalcular e somar o valor ao saldo real do cliente imediatamente.
-- [ ] A operação deve gerar um registro de sucesso textual no extrato.
+### Regras de Negócio Fundamentais (RN)
+* **RN-001 (Validação de Margem):** Um saque só é validado se $\text{Valor do Saque} + \text{Taxa} \le \text{Saldo Atual} + \text{Limite do Cheque Especial}$.
+* **RN-002 (Tarifa Fixa):** Incidência fixa de **R$ 2,50** deduzida a cada saque bem-sucedido.
+* **RN-003 (Fila de Extrato):** Retenção estrita das últimas 3 operações para simular restrição física de memória volátil.
 
-**Dependências**: RF-001
+### Requisitos Não-Funcionais de Destaque (RNF)
+* **RNF-002 (Volatilidade):** Persistência de dados executada 100% em memória RAM através de estruturas nativas do Python.
+* **RNF-003 (Robustez - *Anti-Crash*):** Tratamento preventivo de exceções (`try-except`) para erros de tipo `ValueError` (ex: digitação de letras em campos numéricos), impedindo a queda do sistema.
 
 ---
 
-#### RF-003: Realização de Saques
-**Descrição**: O sistema deve permitir que o usuário retire fundos de sua conta informando um valor monetário, deduzindo do saldo real e aplicando as taxas operacionais cabíveis.
+## 🛠️ Tecnologias Utilizadas
 
-**Prioridade**: Alta  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-**Rastreabilidade**: Derivado de NS-003 e regulado por RN-001 e RN-002
+O projeto foi construído de forma puramente nativa para demonstrar o domínio da lógica de programação e portabilidade da arquitetura:
 
-**Critérios de Aceitação**:
-- [ ] O sistema deve calcular o custo total da operação (`Valor do Saque` + `Taxa de Serviço`).
-- [ ] O sistema deve validar se o custo total é coberto pelo saldo somado ao cheque especial.
-- [ ] Caso aprovado, o valor deve ser debitado e uma mensagem de sucesso deve ser exibida.
-
-**Dependências**: RF-001, RN-001, RN-002
-
----
-
-#### RF-004: Consulta de Extrato Dinâmico
-**Descrição**: O sistema deve exibir em tela as últimas movimentações financeiras realizadas pelo cliente na sessão atual.
-
-**Prioridade**: Média  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-**Rastreabilidade**: Derivado de NS-004 e limitado por RN-003
-
-**Critérios de Aceitação**:
-- [ ] Exibir de forma legível o saldo atual total disponível do cliente.
-- [ ] Apresentar a listagem histórica cronológica respeitando o limite máximo de registros ativos.
-
-**Dependências**: RF-001, RN-003
-
----
-
-#### RF-005: Menu Interativo CLI
-**Descrição**: O sistema deve disponibilizar um menu baseado em texto contínuo em formato de loop (`while`), permitindo a navegação entre todas as funcionalidades do banco até que o comando de saída seja acionado.
-
-**Prioridade**: Média  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-**Rastreabilidade**: Derivado de NS-005
-
-**Critérios de Aceitação**:
-- [ ] Apresentar opções numeradas claras para cada funcionalidade (1. Depósito, 2. Saque, 3. Extrato, 4. Sair).
-- [ ] Limpar o terminal a cada mudança de tela para preservar a usabilidade visual.
-
-**Dependências**: RF-001
-
----
-
-### 3.2 Regras de Negócio (RN)
-
-#### RN-001: Validação de Saldo e Cheque Especial
-**Descrição**: O saque só será autorizado se o `Valor do Saque + Taxa de Serviço` for menor ou igual à soma de `Saldo Atual + Limite do Cheque Especial`. Caso o saldo fique negativo devido ao saque, o valor excedente deve ser retirado do limite de cheque especial.
-
-**Prioridade**: Crítica  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-
----
-
-#### RN-002: Cobrança de Taxa de Serviço
-**Descrição**: Toda e qualquer operação de saque concluída com sucesso sofrerá a incidência de uma cobrança de tarifa fixa e imutável no valor de **R$ 2,50**, a ser debitada de forma automática e integrada no ato da transação.
-
-**Prioridade**: Crítica  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-
----
-
-#### RN-003: Histórico Limitado do Extrato
-**Descrição**: Para otimização de memória do software em execução, a estrutura de dados do extrato deve reter e apresentar única e estritamente as **3 últimas movimentações** financeiras realizadas. Qualquer nova transação que exceda este limite deve descartar o registro mais antigo da fila.
-
-**Prioridade**: Média  
-**Versão**: 1.0  
-**Data**: 2026-05-27  
-
----
-
-### 3.3 Requisitos Não-Funcionais (RNF)
-
-#### RNF-001: Linguagem e Dependências
-**Descrição**: O sistema deve ser desenvolvido exclusivamente utilizando a linguagem Python 3, fazendo uso apenas de suas bibliotecas padrão nativas (`os`, `sys`, etc.), sem a dependência de frameworks ou pacotes externos.
-
-**Categoria**: Portabilidade / Arquitetura  
-**Prioridade**: Alta  
-**Versão**: 1.0  
-
----
-
-#### RNF-002: Persistência em Memória Volátil
-**Descrição**: O gerenciamento e o armazenamento de dados do estado da conta e do histórico do usuário devem ocorrer diretamente na memória de execução RAM através de tipos nativos (Listas e Dicionários), sendo dispensado o uso de arquivos externos ou bancos de dados relacionais/não-relacionais.
-
-**Categoria**: Arquitetura  
-**Prioridade**: Alta  
-**Versão**: 1.0  
-
----
-
-#### RNF-003: Robustez e Notificação de Falhas
-**Descrição**: O sistema deve capturar de forma preventiva erros em entradas de dados inseridas pelo usuário. Caso caracteres textuais sejam fornecidos em inputs que exijam dados puramente numéricos, a exceção deve ser tratada (`try-except`) notificando o erro com uma mensagem amigável sem interromper o fluxo ou crashar o programa.
-
-**Categoria**: Confiabilidade  
-**Prioridade**: Alta  
-**Versão**: 1.0  
-**Métrica**: 100% dos erros de `ValueError` devem ser tratados com aviso em tela e retorno seguro ao loop principal.
-
----
-
-#### RNF-004: Usabilidade e Feedback Visual
-**Descrição**: O terminal deve prover feedback visual explícito e imediato após cada operação realizada (mensagens com marcadores visuais claros como "✅ Sucesso" ou "❌ Erro").
-
-**Categoria**: Usabilidade  
-**Prioridade**: Média  
-**Versão**: 1.0  
-
----
-
-## 4. Controle de Versões
-
-### Histórico de Alterações
-
-| Versão | Data       | Autor            | Modificações                                      |
-|--------|------------|------------------|---------------------------------------------------|
-| 1.0    | 2026-05-27 | Maria Eduarda e Tiago | Criação da especificação sob a ISO 29148.         |
-
-### Matriz de Rastreabilidade Simplificada
-
-* **NS-001 (Cadastro)** RF-001 (Abertura de Conta) $\rightarrow$ Teste de validação de dados iniciais.
-* **NS-002 (Depósito)**  RF-002 (Realização de Depósitos) $\rightarrow$ Teste de incrementação de saldo.
-* **NS-003 (Saque)**  RF-003 (Realização de Saques) $\rightarrow$ RN-001 (Validação de Limite) e RN-002 (Aplicação de Taxa).
-* **NS-004 (Histórico)**  RF-004 (Consulta de Extrato) $\rightarrow$ RN-003 (Regra das 3 posições).
-* **NS-005 (Interatividade)**  RF-005 (Menu CLI) $\rightarrow$ RNF-003 (Tratamento de Exceções).
+* **Linguagem:** Python 3.x
+* **Bibliotecas Nativas Utilizadas:**
+    * `os`: Para manipulação e limpeza inteligente de buffers do terminal de acordo com o Sistema Operacional instalado (`cls` ou `clear`).
