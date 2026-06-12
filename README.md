@@ -6,13 +6,13 @@
   <img src="https://img.shields.io/badge/Ambiente-CLI-orange?style=for-the-badge" alt="Ambiente CLI">
 </p>
 
-O **BankPython** é uma aplicação de Linha de Comando (CLI) que simula um sistema de banco digital moderno, dinâmico e seguro. O projeto foi desenvolvido como o entregável final da disciplina de **Levantamento de Requisitos (LER)**, unindo uma especificação de software rigorosa com uma implementação limpa e robusta em Python.
+O **BankPython** é uma aplicação de Linha de Comando (CLI) que simula um sistema de banco digital moderno, dinâmico e seguro. O projeto foi desenvolvido como o entregável final da disciplina de **Levantamento de Requisitos (LER)** **Lógica e Programação (LOPAL)**
 
 ---
 
 ## 📌 Sobre o Projeto
 
-O objetivo principal deste projeto foi aplicar as diretrizes de engenharia de requisitos da norma **ISO/IEC/IEEE 29148:2018** em um cenário prático. O software gerencia de forma volátil as operações bancárias essenciais de um cliente único, integrando taxas automatizadas, controle inteligente de limite de cheque especial e gerenciamento otimizado de histórico em memória RAM.
+O objetivo principal deste projeto foi aplicar as diretrizes de engenharia de requisitos da norma **ISO/IEC/IEEE 29148:2018** em um cenário prático, utilizar as metodologias ageis aprendidas em sala de aula - Kanbam e Scrum. O software gerencia as operações bancárias essenciais de um cliente único, integrando taxa automatizada, controle inteligente de limite de cheque especial.
 
 ### 🚀 Funcionalidades Principais
 * **Abertura de Conta Prática (RF-001):** Cadastro rápido do titular com validação de aporte inicial e ativação opcional de limite emergencial.
@@ -33,16 +33,12 @@ A arquitetura do software foi totalmente guia pela documentação de requisitos.
 * **RN-002 (Tarifa Fixa):** Incidência fixa de **R$ 2,50** deduzida a cada saque bem-sucedido.
 * **RN-003 (Fila de Extrato):** Retenção estrita das últimas 3 operações para simular restrição física de memória volátil.
 
-### Requisitos Não-Funcionais de Destaque (RNF)
-* **RNF-002 (Volatilidade):** Persistência de dados executada 100% em memória RAM através de estruturas nativas do Python.
-* **RNF-003 (Robustez - *Anti-Crash*):** Tratamento preventivo de exceções (`try-except`) para erros de tipo `ValueError` (ex: digitação de letras em campos numéricos), impedindo a queda do sistema.
-
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto foi construído de forma puramente nativa para demonstrar o domínio da lógica de programação e portabilidade da arquitetura:
 
-* **Linguagem:** Python 3.x
+* **Linguagem:** Python 3.14
 * **Bibliotecas Nativas Utilizadas:**
     * `os`: Para manipulação e limpeza inteligente de buffers do terminal de acordo com o Sistema Operacional instalado (`cls` ou `clear`).
