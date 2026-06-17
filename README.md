@@ -40,6 +40,6 @@ A arquitetura do software foi totalmente guia pela documentação de requisitos.
 O projeto foi construído de forma puramente nativa para demonstrar o domínio da lógica de programação e portabilidade da arquitetura:
 
 * **Linguagem:** Python 3.14
-* **ferramenta:** Visual Studio Code
+* **ferramenta:** VS Code
 * **Bibliotecas Nativas Utilizadas:**
     * `os`: Para manipulação e limpeza inteligente de buffers do terminal de acordo com o Sistema Operacional instalado (`cls` ou `clear`).
