@@ -47,4 +47,9 @@ O projeto foi construído de forma puramente nativa para demonstrar o domínio d
 ## 🎨 Design do Projeto
 
 Você pode acessar o protótipo interativo e os arquivos de design diretamente no Figma:
-👉 [Acessar Projeto no Figma](https://www.figma.com/design/RRbGYNlCLIlycn4NtQ5QuD/BankPython?node-id=0-1&t=dN36o1cPUesdYQcl-1)
+👉 [Acessar Projeto no Figma](https://encurtador.com.br/djVc)
+
+## 🎨 Design no Canva
+
+O material gráfico e apresentação deste projeto foram desenvolvidos no Canva:
+👉 [Ver projeto no Canva](https://encurtador.com.br/Vqep)
