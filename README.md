@@ -43,3 +43,8 @@ O projeto foi construído de forma puramente nativa para demonstrar o domínio d
 * **ferramenta:** VS Code
 * **Bibliotecas Nativas Utilizadas:**
     * `os`: Para manipulação e limpeza inteligente de buffers do terminal de acordo com o Sistema Operacional instalado (`cls` ou `clear`).
+
+## 🎨 Design do Projeto
+
+Você pode acessar o protótipo interativo e os arquivos de design diretamente no Figma:
+👉 [Acessar Projeto no Figma](https://www.figma.com/design/RRbGYNlCLIlycn4NtQ5QuD/BankPython?node-id=0-1&t=dN36o1cPUesdYQcl-1)
