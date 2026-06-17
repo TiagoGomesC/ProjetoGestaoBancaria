@@ -50,6 +50,7 @@ O sistema operará de forma autônoma via terminal de comando de texto, sendo ex
 
 **Critérios de Aceitação**:
 - [ ] O sistema não deve aceitar nomes de titulares vazios.
+ -[ ] O sistema deve validar se o titular possui idade igual ou superior a 16 anos antes de permitir a abertura.
 - [ ] O depósito de abertura deve aceitar apenas valores numéricos positivos ou zero.
 - [ ] Após o cadastro bem-sucedido, os dados devem ser salvos em memória e o menu principal deve ser liberado.
 
@@ -147,6 +148,13 @@ O sistema operará de forma autônoma via terminal de comando de texto, sendo ex
 **Prioridade**: Média  
 **Versão**: 1.0  
 **Data**: 2026-05-27  
+
+#### RN-004: Restrição de Idade Mínima
+**Descrição**: O sistema de Banco Digital é exclusivo para usuários com idade igual ou superior a 16 anos. Caso a idade informada no cadastro inicial seja menor que 16, o sistema deve exibir uma mensagem impeditiva e encerrar o fluxo imediatamente.
+
+**Prioridade**: Crítica
+**Versão**: 1.0
+**Data**: 2026-06-16
 
 ---
 
