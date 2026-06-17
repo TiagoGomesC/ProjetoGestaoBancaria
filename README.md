@@ -33,7 +33,7 @@ A arquitetura do software foi totalmente guia pela documentação de requisitos.
 * **RN-002 (Tarifa Fixa):** Incidência fixa de **R$ 2,50** deduzida a cada saque bem-sucedido.
 * **RN-003 (Fila de Extrato):** Retenção estrita das últimas 3 operações para simular restrição física de memória volátil.
 
----
+----
 
 ## 🛠️ Tecnologias Utilizadas
 
