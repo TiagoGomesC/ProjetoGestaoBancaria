@@ -12,7 +12,7 @@ O **BankPython** é uma aplicação de Linha de Comando (CLI) que simula um sist
 
 ## 📌 Sobre o Projeto
 
-O objetivo principal deste projeto foi aplicar as diretrizes de engenharia de requisitos da norma **ISO/IEC/IEEE 29148:2018** em um cenário prático, utilizar as metodologias ageis aprendidas em sala de aula - Kanbam e Scrum. O software gerencia as operações bancárias essenciais de um cliente único, integrando taxa automatizada, controle inteligente de limite de cheque especial.
+O objetivo principal deste projeto foi aplicar as diretrizes de engenharia de requisitos da norma **ISO/IEC/IEEE 29148:2018** em um cenário prático, utilizar as metodologias ageis aprendidas em sala de aula - Kanbam e Scrum, tomada de decisão e estrutura em Python. O software gerencia as operações bancárias essenciais de um cliente único, integrando taxa automatizada, controle inteligente de limite de cheque especial.
 
 ### 🚀 Funcionalidades Principais
 * **Abertura de Conta Prática (RF-001):** Cadastro rápido do titular com validação de aporte inicial e ativação opcional de limite emergencial.
@@ -40,5 +40,6 @@ A arquitetura do software foi totalmente guia pela documentação de requisitos.
 O projeto foi construído de forma puramente nativa para demonstrar o domínio da lógica de programação e portabilidade da arquitetura:
 
 * **Linguagem:** Python 3.14
+* **ferramenta:** Visual Studio Code
 * **Bibliotecas Nativas Utilizadas:**
     * `os`: Para manipulação e limpeza inteligente de buffers do terminal de acordo com o Sistema Operacional instalado (`cls` ou `clear`).
