@@ -53,3 +53,7 @@ Você pode acessar o protótipo interativo e os arquivos de design diretamente n
 
 O material gráfico e apresentação deste projeto foram desenvolvidos no Canva:
 👉 [Ver projeto no Canva](https://encurtador.com.br/Vqep)
+
+## 🐍Conclusão
+
+A parte mais difícíl do projeto foi prestar atenção aos minimos detalhes da estrutura do código, que é desenvolvido por meio da Estrutura condicional, laço de repetição, listas, variaveís e funções. Entretando as metodologias ágeis facilitaram muito a elaboração e conclusão do projeto!
